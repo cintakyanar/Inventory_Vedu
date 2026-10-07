@@ -1,0 +1,3210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --purple: #7043a8;
+    --purple-dark: #33234f;
+    --purple-light: #f3edfa;
+
+    --blue: #64c8e8;
+
+    --white: #ffffff;
+    --background: #f7f7fa;
+
+    --text: #292532;
+    --gray: #77717f;
+
+    --green: #2aa66f;
+    --orange: #e9a72f;
+    --red: #dc5656;
+
+    --border: #e6e1eb;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-page {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1eafa,
+            #ffffff
+        );
+}
+
+
+/* BAGIAN KIRI */
+
+.login-left {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px;
+}
+
+
+.logo-login {
+    width: 430px;
+
+    max-width: 80%;
+
+    margin-bottom: 30px;
+}
+
+
+.login-left h1 {
+    color: var(--purple-dark);
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+
+.login-left p {
+    color: var(--gray);
+
+    font-size: 17px;
+}
+
+
+/* BAGIAN KANAN */
+
+.login-right {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+}
+
+
+.login-box {
+    width: 100%;
+
+    max-width: 420px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 50px rgba(70, 45, 100, 0.12);
+}
+
+
+.login-box h2 {
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+
+.login-subtitle {
+    color: var(--gray);
+
+    margin-bottom: 25px;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+.form-group input,
+.form-control {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: white;
+}
+
+
+.form-group input:focus,
+.form-control:focus {
+    border-color: var(--purple);
+
+    box-shadow:
+        0 0 0 3px rgba(112, 67, 168, 0.1);
+}
+
+
+.btn-login {
+    width: 100%;
+
+    padding: 14px;
+
+    background: var(--purple);
+
+    color: white;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    margin-top: 5px;
+}
+
+
+.btn-login:hover {
+    background: #5d348e;
+}
+
+
+.login-info {
+    text-align: center;
+
+    margin-top: 22px;
+
+    font-size: 13px;
+
+    color: var(--gray);
+}
+
+
+.login-info b {
+    color: var(--purple);
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.dashboard-page {
+    min-height: 100vh;
+
+    display: flex;
+}
+
+
+.sidebar {
+    width: 245px;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    background: var(--purple-dark);
+
+    color: white;
+
+    padding: 25px 16px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.sidebar-logo {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.sidebar-logo img {
+    width: 150px;
+
+    background: white;
+
+    padding: 8px;
+
+    border-radius: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+.sidebar-logo h3 {
+    font-size: 18px;
+}
+
+
+.sidebar-logo span {
+    font-size: 12px;
+
+    opacity: 0.7;
+}
+
+
+/* MENU */
+
+.sidebar nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.menu {
+    width: 100%;
+
+    text-align: left;
+
+    background: transparent;
+
+    color: #eee;
+
+    padding: 13px 15px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+}
+
+
+.menu:hover,
+.menu.active {
+    background: var(--purple);
+
+    color: white;
+}
+
+
+.logout {
+    margin-top: auto;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main-content {
+    margin-left: 245px;
+
+    width: calc(100% - 245px);
+}
+
+
+.topbar {
+    height: 80px;
+
+    background: white;
+
+    border-bottom: 1px solid var(--border);
+
+    padding: 0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.topbar h2 {
+    font-size: 21px;
+}
+
+
+.topbar p {
+    color: var(--gray);
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+
+.topbar-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.notification {
+    background: var(--purple-light);
+
+    color: var(--purple);
+
+    padding: 9px 13px;
+
+    border-radius: 10px;
+}
+
+
+.user-info {
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    padding: 30px;
+}
+
+
+.page-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+
+.page-header h2 {
+    font-size: 25px;
+}
+
+
+.page-header p {
+    color: var(--gray);
+
+    margin-top: 5px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(50,40,70,0.04);
+}
+
+
+.stat-card {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+}
+
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    background: var(--purple-light);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+.stat-card small {
+    color: var(--gray);
+}
+
+
+.stat-card h3 {
+    font-size: 25px;
+
+    margin: 4px 0;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-card {
+    margin-top: 22px;
+}
+
+
+.table-title {
+    font-size: 17px;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+th,
+td {
+    padding: 13px;
+
+    text-align: left;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 13px;
+}
+
+
+th {
+    background: #faf8fd;
+
+    color: #5f596b;
+}
+
+
+.badge {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+.badge-green {
+    color: var(--green);
+
+    background: #eaf8f1;
+}
+
+
+.badge-yellow {
+    color: #a06a00;
+
+    background: #fff5dc;
+}
+
+
+.badge-red {
+    color: var(--red);
+
+    background: #fff0f0;
+}
+
+
+.badge-blue {
+    color: #3970ad;
+
+    background: #edf5ff;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    padding: 11px 16px;
+
+    border-radius: 9px;
+
+    font-weight: bold;
+}
+
+
+.btn-primary {
+    background: var(--purple);
+
+    color: white;
+}
+
+
+.btn-primary:hover {
+    background: #5d348e;
+}
+
+
+.btn-secondary {
+    background: var(--purple-light);
+
+    color: var(--purple);
+}
+
+
+.btn-success {
+    background: #eaf8f1;
+
+    color: var(--green);
+}
+
+
+.btn-danger {
+    background: #fff0f0;
+
+    color: var(--red);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-card {
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.field label {
+    display: block;
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+}
+
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+
+textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+
+.form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+.info-box {
+    background: var(--purple-light);
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   REMINDER
+========================= */
+
+.reminder-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.reminder-card {
+    border-left: 4px solid var(--orange);
+}
+
+
+.reminder-card.red {
+    border-left-color: var(--red);
+}
+
+
+.reminder-card h3 {
+    margin: 7px 0;
+}
+
+
+/* =========================
+   PRINT
+========================= */
+
+.print-document {
+    background: white;
+
+    padding: 35px;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+.print-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 2px solid var(--purple);
+
+    padding-bottom: 15px;
+}
+
+
+.print-header img {
+    width: 220px;
+}
+
+
+.print-title {
+    text-align: center;
+
+    margin: 25px 0;
+
+    color: var(--purple-dark);
+}
+
+
+.print-section {
+    margin-top: 20px;
+}
+
+
+.print-section h4 {
+    background: var(--purple-light);
+
+    padding: 9px;
+
+    color: var(--purple-dark);
+
+    margin-bottom: 10px;
+}
+
+
+@media print {
+
+    .sidebar,
+    .topbar {
+        display: none;
+    }
+
+    .main-content {
+        margin: 0;
+
+        width: 100%;
+    }
+
+    .content {
+        padding: 0;
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 900px) {
+
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+
+    .login-left {
+        padding: 30px;
+    }
+
+
+    .login-left h1 {
+        font-size: 28px;
+    }
+
+
+    .sidebar {
+        width: 210px;
+    }
+
+
+    .main-content {
+        margin-left: 210px;
+
+        width: calc(100% - 210px);
+    }
+
+
+    .stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media(max-width: 600px) {
+
+    .login-left {
+        display: none;
+    }
+
+
+    .login-page {
+        display: block;
+    }
+
+
+    .login-right {
+        min-height: 100vh;
+    }
+
+
+    .sidebar {
+        display: none;
+    }
+
+
+    .main-content {
+        margin-left: 0;
+
+        width: 100%;
+    }
+
+
+    .stats,
+    .reminder-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .content {
+        padding: 18px;
+    }
+
+}
+/* =====================================================
+   DASHBOARD HEADER
+===================================================== */
+
+.dashboard-header {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.dashboard-header > div {
+    width: 100%;
+    text-align: center;
+}
+
+.dashboard-header h2 {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--purple-dark);
+}
+
+.dashboard-header p {
+    font-size: 15px;
+    margin: 0;
+    color: var(--gray);
+}
+
+
+/* =====================================================
+   DASHBOARD STAT CARDS
+===================================================== */
+
+.dashboard-stats {
+    margin-top: 38px;
+}
+
+.dashboard-stats .stat-card {
+    transition: all 0.25s ease;
+}
+
+.dashboard-stats .stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(70, 40, 100, 0.12);
+}
+
+
+/* =====================================================
+   RESPONSIVE DASHBOARD
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .dashboard-header h2 {
+        font-size: 28px;
+    }
+
+    .dashboard-stats {
+        margin-top: 28px;
+    }
+
+}
+
+/* =====================================================
+   HASIL SEARCH BARANG PEMINJAMAN
+===================================================== */
+
+.search-result-item {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 12px;
+    padding: 17px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    background: #ffffff;
+    border: 1.5px solid #e4d9ef;
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 12px rgba(70, 40, 100, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* SAAT MOUSE DIARAHKAN */
+
+.search-result-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--purple);
+    background: #faf7ff;
+    box-shadow: 0 9px 22px rgba(112, 67, 168, 0.14);
+}
+
+
+/* BAGIAN KIRI */
+
+.search-result-main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+
+.search-result-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #f1eafa;
+
+    font-size: 20px;
+}
+
+
+.search-result-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    min-width: 0;
+}
+
+
+.search-result-info strong {
+    color: var(--purple-dark);
+    font-size: 15px;
+}
+
+
+.search-result-info span {
+    color: var(--gray);
+    font-size: 12px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* BAGIAN KANAN */
+
+.search-result-action {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.search-result-action b {
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+
+.search-result-item:hover
+.search-result-action b {
+    transform: translateX(4px);
+}
+
+
+/* SUDAH DIPILIH */
+
+.search-result-selected {
+    border-color: #d8c9e5;
+    background: #f8f5fb;
+}
+
+
+.search-selected {
+    color: #6b5875;
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .search-result-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .search-result-action {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+}
+
+/* =====================================================
+   DATA PENGEMBALIAN
+===================================================== */
+
+.return-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+.return-person-card {
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 20px 22px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e4dbea;
+
+    border-radius: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+
+    box-shadow:
+        0 5px 18px
+        rgba(70, 40, 100, 0.06);
+
+}
+
+
+.return-person-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        var(--purple);
+
+    box-shadow:
+        0 10px 25px
+        rgba(70, 40, 100, 0.12);
+
+}
+
+
+.return-person-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-width: 0;
+
+}
+
+
+.return-person-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        #f1eafa;
+
+    font-size: 21px;
+
+}
+
+
+.return-person-left h3 {
+
+    margin:
+        0 0 5px;
+
+    color:
+        var(--purple-dark);
+
+    font-size:
+        16px;
+
+}
+
+
+.return-person-left p {
+
+    margin:
+        0 0 5px;
+
+    color:
+        #5f5666;
+
+    font-size:
+        13px;
+
+}
+
+
+.return-person-left small {
+
+    color:
+        var(--gray);
+
+    font-size:
+        12px;
+
+}
+
+
+.return-person-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    flex-shrink: 0;
+
+}
+
+
+.return-status {
+
+    padding:
+        7px 11px;
+
+    border-radius:
+        20px;
+
+    background:
+        #f4eef9;
+
+    color:
+        var(--purple);
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+
+}
+
+
+.return-late {
+
+    border-color:
+        #e8caca;
+
+}
+
+
+.return-late .return-status {
+
+    background:
+        #fff1f1;
+
+    color:
+        #a14c4c;
+
+}
+
+
+.return-arrow {
+
+    font-size:
+        20px;
+
+    color:
+        var(--purple);
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+.return-person-card:hover
+.return-arrow {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =====================================================
+   DETAIL PENGEMBALIAN
+===================================================== */
+
+.return-detail-container {
+
+    margin-top:
+        25px;
+
+}
+
+
+.return-detail-card {
+
+    padding:
+        25px;
+
+}
+
+
+.return-detail-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom:
+        20px;
+
+    margin-bottom:
+        20px;
+
+    border-bottom:
+        1px solid #eee6f1;
+
+}
+
+
+.return-detail-header h2 {
+
+    margin:
+        0 0 5px;
+
+    color:
+        var(--purple-dark);
+
+}
+
+
+.return-detail-header p {
+
+    margin:
+        0;
+
+    color:
+        var(--gray);
+
+    font-size:
+        13px;
+
+}
+
+
+.return-info-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        12px;
+
+}
+
+
+.return-info-box {
+
+    padding:
+        15px;
+
+    background:
+        #faf8fc;
+
+    border:
+        1px solid #eee7f2;
+
+    border-radius:
+        12px;
+
+}
+
+
+.return-info-box span {
+
+    display:
+        block;
+
+    font-size:
+        11px;
+
+    color:
+        var(--gray);
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.return-info-box strong {
+
+    color:
+        #42354a;
+
+    font-size:
+        13px;
+
+}
+
+
+.return-section {
+
+    margin-top:
+        25px;
+
+}
+
+
+.return-section h3 {
+
+    margin:
+        0 0 13px;
+
+    color:
+        var(--purple-dark);
+
+    font-size:
+        16px;
+
+}
+
+
+/* =====================================================
+   FOTO PEMINJAMAN
+===================================================== */
+
+.return-photo-wrapper {
+
+    width: 100%;
+
+    max-height:
+        350px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        15px;
+
+    background:
+        #f5f2f7;
+
+    border:
+        1px solid #e7dfeb;
+
+}
+
+
+.return-photo {
+
+    display:
+        block;
+
+    width: 100%;
+
+    max-height:
+        350px;
+
+    object-fit:
+        contain;
+
+}
+
+
+/* =====================================================
+   DAFTAR BARANG
+===================================================== */
+
+.return-items {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        9px;
+
+}
+
+
+.return-item-row {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    padding:
+        14px 16px;
+
+    background:
+        #faf8fc;
+
+    border:
+        1px solid #eee7f2;
+
+    border-radius:
+        12px;
+
+}
+
+
+.return-item-row strong {
+
+    display:
+        block;
+
+    color:
+        #45354d;
+
+    font-size:
+        14px;
+
+}
+
+
+.return-item-row small {
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+
+    color:
+        var(--gray);
+
+    font-size:
+        12px;
+
+}
+
+
+.return-item-row b {
+
+    color:
+        var(--purple);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .return-person-card {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .return-person-right {
+
+        width: 100%;
+
+        justify-content:
+            flex-end;
+
+    }
+
+
+    .return-info-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .return-detail-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+}
+/* =====================================================
+   FINAL VISUAL DESIGN
+===================================================== */
+
+/* =========================
+   ANIMASI UMUM
+========================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes floatDecoration {
+    0% {
+        transform: rotate(45deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(45deg) translateY(-8px);
+    }
+
+    100% {
+        transform: rotate(45deg) translateY(0);
+    }
+}
+
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3ecfa 0%,
+            #faf8fd 48%,
+            #ffffff 100%
+        );
+
+    animation: fadeIn 0.6s ease both;
+}
+
+
+/* =========================
+   GARIS / DEKORASI LOGIN
+========================= */
+
+.login-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    left: -175px;
+    bottom: -155px;
+
+    border: 24px solid rgba(112, 67, 168, 0.12);
+
+    border-radius: 55px;
+
+    transform: rotate(45deg);
+
+    pointer-events: none;
+
+    animation:
+        floatDecoration
+        7s ease-in-out
+        infinite;
+}
+
+
+.login-page::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    right: -145px;
+    top: -130px;
+
+    border: 20px solid rgba(100, 200, 232, 0.15);
+
+    border-radius: 50px;
+
+    transform: rotate(45deg);
+
+    pointer-events: none;
+
+    animation:
+        floatDecoration
+        8s ease-in-out
+        infinite;
+}
+
+
+/* =========================
+   LOGIN BAGIAN KIRI
+========================= */
+
+.login-left {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 55px;
+
+    z-index: 2;
+
+    animation:
+        fadeLeft
+        0.8s
+        ease
+        both;
+}
+
+
+/* =========================
+   LOGO LOGIN
+========================= */
+
+.logo-login,
+.login-logo {
+    position: absolute;
+
+    top: 40px;
+    left: 45px;
+
+    width: 185px;
+    max-width: none;
+
+    height: auto;
+
+    object-fit: contain;
+
+    margin: 0;
+
+    z-index: 10;
+
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.login-left p {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: var(--gray);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    animation:
+        fadeUp
+        0.8s
+        0.3s
+        ease
+        both;
+}
+
+
+/* =========================
+   LOGIN BAGIAN KANAN
+========================= */
+
+.login-right {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px;
+
+    z-index: 3;
+
+    animation:
+        fadeRight
+        0.8s
+        0.15s
+        ease
+        both;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-box {
+
+    width: 100%;
+
+    max-width: 410px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid
+        rgba(112, 67, 168, 0.08);
+
+    box-shadow:
+        0 20px 50px
+        rgba(70, 45, 100, 0.12);
+
+    animation:
+        scaleIn
+        0.7s
+        0.15s
+        ease
+        both;
+}
+
+
+/* =========================
+   GARIS DI LOGIN CARD
+========================= */
+
+.login-box::before {
+
+    content: "";
+
+    display: block;
+
+    width: 48px;
+    height: 4px;
+
+    margin-bottom: 20px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+}
+
+
+/* =========================
+   ANIMASI FORM
+========================= */
+
+.login-box .form-group {
+    animation:
+        fadeUp
+        0.5s
+        ease
+        both;
+}
+
+
+.login-box .form-group:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+
+.login-box .form-group:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+
+.login-box .btn-login {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.login-box .btn-login:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px
+        rgba(112, 67, 168, 0.2);
+}
+
+
+/* =====================================================
+   DASHBOARD - GARIS DEKORASI
+===================================================== */
+
+.dashboard-page {
+
+    position: relative;
+
+    overflow-x: hidden;
+
+    animation:
+        fadeIn
+        0.5s
+        ease
+        both;
+}
+
+
+/* GARIS UNGU DI POJOK */
+
+.dashboard-page::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 220px;
+    height: 220px;
+
+    right: -145px;
+    top: 110px;
+
+    border:
+        18px solid
+        rgba(112, 67, 168, 0.08);
+
+    border-radius: 45px;
+
+    transform: rotate(45deg);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* GARIS BIRU DI BAWAH */
+
+.dashboard-page::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 180px;
+    height: 180px;
+
+    left: 180px;
+    bottom: -135px;
+
+    border:
+        15px solid
+        rgba(100, 200, 232, 0.08);
+
+    border-radius: 40px;
+
+    transform: rotate(45deg);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =====================================================
+   MAIN CONTENT ANIMATION
+===================================================== */
+
+.main-content {
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.content {
+
+    animation:
+        fadeUp
+        0.55s
+        ease
+        both;
+}
+
+
+/* =====================================================
+   DASHBOARD HEADER
+===================================================== */
+
+.dashboard-header {
+
+    animation:
+        fadeUp
+        0.6s
+        ease
+        both;
+}
+
+
+.dashboard-header h2 {
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: var(--purple-dark);
+}
+
+
+.dashboard-header p {
+
+    font-size: 15px;
+
+    color: var(--gray);
+}
+
+
+/* =====================================================
+   STAT CARDS
+===================================================== */
+
+.dashboard-stats {
+
+    margin-top: 42px;
+
+    animation:
+        fadeUp
+        0.7s
+        0.1s
+        ease
+        both;
+}
+
+
+.dashboard-stats .stat-card {
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.dashboard-stats .stat-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 12px 28px
+        rgba(70, 40, 100, 0.12);
+}
+
+
+.dashboard-stats .stat-card:nth-child(1) {
+    animation:
+        fadeUp 0.5s 0.15s ease both;
+}
+
+
+.dashboard-stats .stat-card:nth-child(2) {
+    animation:
+        fadeUp 0.5s 0.25s ease both;
+}
+
+
+.dashboard-stats .stat-card:nth-child(3) {
+    animation:
+        fadeUp 0.5s 0.35s ease both;
+}
+
+
+.dashboard-stats .stat-card:nth-child(4) {
+    animation:
+        fadeUp 0.5s 0.45s ease both;
+}
+
+
+/* =====================================================
+   TABLE / CARD LAIN
+===================================================== */
+
+.card,
+.table-card,
+.form-card,
+.reminder-card {
+
+    animation:
+        fadeUp
+        0.55s
+        ease
+        both;
+}
+
+
+/* =====================================================
+   SEARCH RESULT ANIMATION
+===================================================== */
+
+.search-result-item {
+
+    animation:
+        fadeUp
+        0.35s
+        ease
+        both;
+}
+
+
+/* =====================================================
+   RETURN CARD ANIMATION
+===================================================== */
+
+.return-person-card {
+
+    animation:
+        fadeUp
+        0.4s
+        ease
+        both;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* =====================================================
+   BUTTON ANIMATION
+===================================================== */
+
+.btn,
+.menu,
+.logout {
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================================
+   MOBILE / HP
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .login-page {
+
+        grid-template-columns: 1fr;
+
+        min-height: 100vh;
+    }
+
+
+    .login-left {
+
+        min-height: 390px;
+
+        padding:
+            120px
+            30px
+            35px;
+    }
+
+
+    .logo-login,
+    .login-logo {
+
+        width: 145px;
+
+        max-width: none;
+
+        top: 28px;
+        left: 30px;
+    }
+
+
+    .login-left::before {
+
+        top: 72px;
+        left: 32px;
+
+        width: 72px;
+    }
+
+
+    .login-left::after {
+
+        top: 81px;
+        left: 32px;
+
+        width: 43px;
+    }
+
+
+    .login-left h1 {
+
+        font-size: 34px;
+
+        margin-top: 25px;
+    }
+
+
+    .login-left p {
+
+        font-size: 14px;
+
+        max-width: 390px;
+    }
+
+
+    .login-right {
+
+        padding:
+            25px 30px 40px;
+    }
+
+
+    .login-box {
+
+        max-width: 450px;
+
+        padding: 35px;
+    }
+
+
+    .dashboard-header h2 {
+
+        font-size: 30px;
+    }
+}
+
+
+/* =====================================================
+   HP KECIL
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .login-left {
+
+        min-height: 330px;
+
+        padding:
+            105px
+            22px
+            25px;
+    }
+
+
+    .logo-login,
+    .login-logo {
+
+        width: 115px;
+
+        top: 22px;
+        left: 22px;
+    }
+
+
+    .login-left::before {
+
+        top: 58px;
+        left: 24px;
+
+        width: 60px;
+
+        height: 2px;
+    }
+
+
+    .login-left::after {
+
+        top: 65px;
+        left: 24px;
+
+        width: 36px;
+
+        height: 2px;
+    }
+
+
+    .login-left h1 {
+
+        font-size: 28px;
+
+        letter-spacing: -0.4px;
+
+        margin-top: 15px;
+    }
+
+
+    .login-left h1::after {
+
+        width: 55px;
+
+        height: 3px;
+
+        margin-top: 12px;
+    }
+
+
+    .login-left p {
+
+        font-size: 13px;
+
+        line-height: 1.6;
+
+        max-width: 330px;
+    }
+
+
+    .login-right {
+
+        padding:
+            20px;
+    }
+
+
+    .login-box {
+
+        padding:
+            28px 22px;
+
+        border-radius: 17px;
+    }
+
+
+    .login-box h2 {
+
+        font-size: 24px;
+    }
+
+
+    .dashboard-header h2 {
+
+        font-size: 27px;
+    }
+
+
+    .dashboard-stats {
+
+        margin-top: 28px;
+    }
+
+
+    .content {
+
+        padding: 18px;
+    }
+}
+
+/* =====================================================
+   PERBAIKAN LOGO LOGIN & HALAMAN PENGEMBALIAN
+===================================================== */
+
+
+/* =========================
+   LOGO LOGIN - LEBIH RAPI
+========================= */
+
+.logo-login,
+.login-logo {
+    position: absolute;
+
+    top: 40px;
+    left: 45px;
+
+    width: 185px;
+    max-width: none;
+
+    height: auto;
+
+    object-fit: contain;
+
+    margin: 0;
+
+    z-index: 10;
+
+    /* supaya logo tidak terganggu dekorasi */
+    background: #ffffff;
+    padding: 6px 10px;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+
+/* HILANGKAN GARIS YANG MENIMPA LOGO */
+
+.login-left::before,
+.login-left::after {
+    display: none !important;
+}
+
+
+/* =========================
+   JUDUL LOGIN
+========================= */
+
+.login-left h1 {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 15px;
+}
+
+
+/* =========================
+   HEADER HALAMAN
+   PENGEMBALIAN
+========================= */
+
+.page-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+
+    padding: 0 2px;
+}
+
+
+.page-header > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.page-header h2 {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 28px;
+    line-height: 1.25;
+
+    font-weight: 700;
+}
+
+
+.page-header p {
+    margin: 0;
+
+    color: var(--gray);
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BAGIAN PENGEMBALIAN
+========================= */
+
+.return-list {
+    margin-top: 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+/* CARD "TIDAK ADA PEMINJAMAN AKTIF" */
+
+.return-list > .card {
+    width: 100%;
+
+    padding: 24px 25px;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7e1ec;
+
+    box-shadow:
+        0 5px 20px rgba(50, 40, 70, 0.05);
+}
+
+
+/* JUDUL DI DALAM CARD */
+
+.return-list > .card h3 {
+    margin: 0 0 5px;
+
+    color: var(--text);
+
+    font-size: 20px;
+
+    line-height: 1.3;
+}
+
+
+/* DESKRIPSI DI DALAM CARD */
+
+.return-list > .card p {
+    margin: 0;
+
+    color: #625b68;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   RETURN PERSON CARD
+========================= */
+
+.return-person-card {
+    padding: 19px 22px;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5deea;
+
+    box-shadow:
+        0 4px 15px rgba(70, 40, 100, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.return-person-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #bda6d2;
+
+    box-shadow:
+        0 8px 22px rgba(70, 40, 100, 0.09);
+}
+
+
+/* =========================
+   DETAIL PENGEMBALIAN
+========================= */
+
+.return-detail-container {
+    margin-top: 22px;
+}
+
+
+.return-detail-card {
+    padding: 25px;
+
+    border-radius: 17px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7e0eb;
+
+    box-shadow:
+        0 5px 20px rgba(50, 40, 70, 0.05);
+}
+
+
+.return-detail-header {
+    padding-bottom: 18px;
+
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #eee8f1;
+}
+
+
+.return-detail-header h2 {
+    margin: 0 0 6px;
+
+    font-size: 23px;
+
+    color: var(--purple-dark);
+
+    line-height: 1.3;
+}
+
+
+.return-detail-header p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: var(--gray);
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   RESPONSIVE LOGO
+========================= */
+
+@media (max-width: 900px) {
+
+    .logo-login,
+    .login-logo {
+        top: 28px;
+        left: 30px;
+
+        width: 150px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .logo-login,
+    .login-logo {
+        top: 22px;
+        left: 22px;
+
+        width: 120px;
+    }
+
+}
+
+/* =====================================================
+   FINAL FIX - HALAMAN PENGEMBALIAN
+===================================================== */
+
+.return-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* =========================
+   CARD DAFTAR PEMINJAMAN
+========================= */
+
+.return-person-card {
+    width: 100%;
+    min-height: 78px;
+
+    padding: 16px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5deea;
+    border-radius: 14px;
+
+    box-shadow:
+        0 3px 12px rgba(70, 40, 100, 0.05);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.return-person-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #c5b0d5;
+
+    box-shadow:
+        0 7px 18px rgba(70, 40, 100, 0.08);
+}
+
+
+/* =========================
+   KIRI CARD
+========================= */
+
+.return-person-left {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    min-width: 0;
+}
+
+
+.return-person-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #f1eafa;
+
+    font-size: 18px;
+}
+
+
+.return-person-left h3 {
+    margin: 0 0 4px;
+
+    color: var(--purple-dark);
+
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+
+.return-person-left p {
+    margin: 0 0 3px;
+
+    color: #5f5666;
+
+    font-size: 12px;
+}
+
+
+.return-person-left small {
+    color: var(--gray);
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   KANAN CARD
+========================= */
+
+.return-person-right {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+.return-status {
+    padding: 6px 10px;
+
+    border-radius: 18px;
+
+    background: #f4eef9;
+
+    color: var(--purple);
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.return-arrow {
+    font-size: 18px;
+
+    color: var(--purple);
+}
+
+
+/* =========================
+   DETAIL PENGEMBALIAN
+========================= */
+
+.return-detail-container {
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+
+.return-detail-card {
+    width: 100%;
+
+    padding: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7e0eb;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 16px rgba(50, 40, 70, 0.05);
+}
+
+
+/* =========================
+   HEADER DETAIL
+========================= */
+
+.return-detail-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 16px;
+
+    margin-bottom: 18px;
+
+    border-bottom: 1px solid #eee8f1;
+}
+
+
+.return-detail-header h2 {
+    margin: 0 0 4px;
+
+    color: var(--purple-dark);
+
+    font-size: 21px;
+
+    line-height: 1.3;
+}
+
+
+.return-detail-header p {
+    margin: 0;
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   INFO DETAIL
+========================= */
+
+.return-info-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+
+.return-info-box {
+    padding: 13px 14px;
+
+    background: #faf8fc;
+
+    border: 1px solid #eee7f2;
+
+    border-radius: 10px;
+}
+
+
+.return-info-box span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--gray);
+
+    font-size: 10px;
+}
+
+
+.return-info-box strong {
+    color: #42354a;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   BAGIAN DETAIL
+========================= */
+
+.return-section {
+    margin-top: 20px;
+}
+
+
+.return-section h3 {
+    margin: 0 0 10px;
+
+    color: var(--purple-dark);
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   DAFTAR BARANG
+========================= */
+
+.return-items {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.return-item-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 11px 14px;
+
+    background: #faf8fc;
+
+    border: 1px solid #eee7f2;
+
+    border-radius: 10px;
+}
+
+
+.return-item-row strong {
+    display: block;
+
+    color: #45354d;
+
+    font-size: 13px;
+}
+
+
+.return-item-row small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--gray);
+
+    font-size: 11px;
+}
+
+
+.return-item-row b {
+    color: var(--purple);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FOTO
+========================= */
+
+.return-photo-wrapper {
+    width: 100%;
+
+    max-height: 300px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: #f5f2f7;
+
+    border: 1px solid #e7dfeb;
+}
+
+
+.return-photo {
+    display: block;
+
+    width: 100%;
+
+    max-height: 300px;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .return-person-card {
+        padding: 15px 16px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .return-person-right {
+        width: 100%;
+
+        justify-content: flex-end;
+    }
+
+
+    .return-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .return-detail-card {
+        padding: 18px;
+    }
+
+
+    .return-detail-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+}
